@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.mpfive.food</groupId>
+		<artifactId>fruit</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<groupId>com.mpfive.food</groupId>
+	<artifactId>fruit-deploy</artifactId>
+	<packaging>war</packaging>
+	<name>fruit deploy project</name>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.mpfive.food</groupId>
+			<artifactId>fruit-web-home</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.mpfive.food</groupId>
+			<artifactId>fruit-web-apple</artifactId>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.mpfive.food</groupId>
+			<artifactId>fruit-web-banana</artifactId>
+		</dependency> -->
+	</dependencies>
+
+	<build>
+		<finalName>${project.parent.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<id>assemble</id>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<phase>package</phase>
+					</execution>
+				</executions>
+				<!-- <dependencies>
+					<dependency>
+						<groupId>com.alibaba.maven.extensions</groupId>
+						<artifactId>assembly-tgz-archiver</artifactId>
+						<version>RELEASE</version>
+					</dependency>
+				</dependencies> -->
+				<configuration>
+					<finalName>${project.parent.artifactId}</finalName>
+					<appendAssemblyId>false</appendAssemblyId>
+					<descriptor>src/assembly.xml</descriptor>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
