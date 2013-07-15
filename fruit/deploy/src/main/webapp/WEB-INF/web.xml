@@ -20,20 +20,6 @@
 		<param-name>logSystem</param-name>
 		<param-value>log4j</param-value>
 	</context-param>
-
-	<!-- <filter>
-		<filter-name>timer</filter-name>
-		<filter-class>com.alibaba.webx.filter.timer.TimerFilter</filter-class>
-		<init-param>
-			<param-name>threshold</param-name>
-			<param-value>30000</param-value>
-		</init-param>
-	</filter>
-	
-	<filter-mapping>
-		<filter-name>timer</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping> -->
 	
 	<listener>
 		<listener-class>com.alibaba.citrus.logconfig.LogConfiguratorListener</listener-class>
